@@ -8,7 +8,6 @@ import type { KalshiOdds, KalshiHistory } from '@/types';
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL as string;
 
 async function fetchKalshiOdds(pickNumber: number): Promise<KalshiOdds[]> {
-  // Try real Kalshi via proxy
   if (SUPABASE_URL) {
     try {
       const res = await fetch(
@@ -22,11 +21,9 @@ async function fetchKalshiOdds(pickNumber: number): Promise<KalshiOdds[]> {
     } catch { /* fall through to mock */ }
   }
 
-  // Fall back to mock data
   const res = await fetch('/mock_kalshi.json');
   const mock = await res.json() as { picks: Record<string, KalshiOdds[]> };
   const key = String(pickNumber);
-  // For picks beyond what's in mock data, use pick 10 data as a template
   return mock.picks[key] ?? mock.picks['10'] ?? [];
 }
 
@@ -41,7 +38,7 @@ async function fetchKalshiHistory(pickNumber: number): Promise<KalshiHistory[]> 
         const data: KalshiHistory[] = await res.json();
         if (data.length > 0) return data;
       }
-    } catch { /* fall through to mock */ }
+    } catch { /* fall through */ }
   }
 
   const res = await fetch('/mock_kalshi.json');
@@ -58,36 +55,42 @@ export function useKalshiPolling() {
   } = useDraftStore();
 
   const slot = NFL_DRAFT_ORDER[currentPickIndex];
-  const phaseRef = useRef(currentPhase);
+  const phaseRef   = useRef(currentPhase);
   phaseRef.current = currentPhase;
+
+  // Track last processed timestamp so we re-run COMPASS on every refetch,
+  // even when mock data hasn't changed
+  const lastProcessed = useRef<number>(0);
 
   const oddsQuery = useQuery({
     queryKey: ['kalshi-odds', slot?.pick_number],
-    queryFn: () => fetchKalshiOdds(slot.pick_number),
+    queryFn:  () => fetchKalshiOdds(slot.pick_number),
     refetchInterval: 60_000,
-    enabled: !!slot && players.length > 0,
-    staleTime: 55_000,
+    enabled:  !!slot && players.length > 0,
+    staleTime: 0, // always re-process on refetch
   });
 
   const historyQuery = useQuery({
     queryKey: ['kalshi-history', slot?.pick_number],
-    queryFn: () => fetchKalshiHistory(slot.pick_number),
-    enabled: !!slot,
+    queryFn:  () => fetchKalshiHistory(slot.pick_number),
+    enabled:  !!slot,
     staleTime: 300_000,
   });
 
+  // Use dataUpdatedAt as dependency — changes every refetch even if data is identical
   useEffect(() => {
     if (!oddsQuery.data || !slot) return;
+    if (oddsQuery.dataUpdatedAt === lastProcessed.current) return;
+    lastProcessed.current = oddsQuery.dataUpdatedAt;
 
     const odds    = oddsQuery.data;
     const history = historyQuery.data ?? [];
 
-    const oddsMap    = new Map(odds.map(o    => [o.player_name, o]));
+    const oddsMap    = new Map(odds.map(o => [o.player_name, o]));
     const historyMap = new Map(history.map(h => [h.player_name, h]));
 
-    const activePlayers = players.filter(p => !p.taken);
-    const results = activePlayers
-      .filter(p => (oddsMap.get(p.name)?.yes_price ?? 0) > 0.01)
+    const results = players
+      .filter(p => !p.taken && (oddsMap.get(p.name)?.yes_price ?? 0) > 0.01)
       .map(p => computeCompass(
         p, slot.pick_number, slot.team_abbr,
         oddsMap.get(p.name),
@@ -106,7 +109,7 @@ export function useKalshiPolling() {
       if (phase.poll_count === 1) advancePickPhase(1);
       if (phase.poll_count === 3) advancePickPhase(2);
     }
-  }, [oddsQuery.data]);
+  }, [oddsQuery.dataUpdatedAt]);
 
   return { oddsQuery, historyQuery };
 }
