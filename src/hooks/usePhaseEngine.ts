@@ -4,16 +4,25 @@ import { NFL_DRAFT_ORDER } from '@/types';
 import { computeCompass, computeBetDecision } from '@/lib/compass';
 import type { AIAnalysis, KalshiOdds, KalshiHistory } from '@/types';
 
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL as string;
+const SUPABASE_URL  = import.meta.env.VITE_SUPABASE_URL  as string;
+const SUPABASE_ANON = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
 
 async function callAIPickAnalysis(payload: unknown): Promise<AIAnalysis> {
   const res = await fetch(`${SUPABASE_URL}/functions/v1/ai-pick-analysis`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${SUPABASE_ANON}`,
+    },
     body: JSON.stringify(payload),
   });
-  if (!res.ok) throw new Error(`AI analysis failed: ${res.status}`);
-  return res.json();
+  if (!res.ok) {
+    const body = await res.text().catch(() => '');
+    throw new Error(`AI analysis failed: ${res.status} ${body}`);
+  }
+  const data = await res.json();
+  if (data.error) throw new Error(`AI analysis error: ${data.error}`);
+  return data as AIAnalysis;
 }
 
 async function fireAutoBet(ticker: string, amount: number, side: 'yes' | 'no') {
