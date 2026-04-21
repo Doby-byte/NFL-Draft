@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh repo *)",
+      "Bash(gh auth *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(npm create *)",
+      "Bash(npm install)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}
