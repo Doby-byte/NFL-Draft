@@ -1,86 +1,84 @@
 {
   "picks": {
     "1": [
-      { "player_name": "Cam Ward",        "yes_price": 0.91, "no_price": 0.09, "ticker": "KXNFLDRAFT-1-CAMWARD",        "payout_per_dollar": 1.10 },
-      { "player_name": "Shedeur Sanders", "yes_price": 0.05, "no_price": 0.95, "ticker": "KXNFLDRAFT-1-SHEDEURSANDERS", "payout_per_dollar": 20.0 },
-      { "player_name": "Travis Hunter",   "yes_price": 0.02, "no_price": 0.98, "ticker": "KXNFLDRAFT-1-TRAVISHUNTER",   "payout_per_dollar": 50.0 }
+      { "player_name": "Fernando Mendoza", "yes_price": 0.91, "no_price": 0.09, "ticker": "KXNFLDRAFT-1-FERNANDOMENDOZA", "payout_per_dollar": 1.10 },
+      { "player_name": "Arvell Reese",     "yes_price": 0.05, "no_price": 0.95, "ticker": "KXNFLDRAFT-1-ARVELLREESE",     "payout_per_dollar": 20.0 },
+      { "player_name": "Jeremiyah Love",   "yes_price": 0.02, "no_price": 0.98, "ticker": "KXNFLDRAFT-1-JEREMIYAHLOVE",  "payout_per_dollar": 50.0 }
     ],
     "2": [
-      { "player_name": "Shedeur Sanders", "yes_price": 0.62, "no_price": 0.38, "ticker": "KXNFLDRAFT-2-SHEDEURSANDERS", "payout_per_dollar": 1.61 },
-      { "player_name": "Travis Hunter",   "yes_price": 0.18, "no_price": 0.82, "ticker": "KXNFLDRAFT-2-TRAVISHUNTER",   "payout_per_dollar": 5.56 },
-      { "player_name": "Abdul Carter",    "yes_price": 0.08, "no_price": 0.92, "ticker": "KXNFLDRAFT-2-ABDULCARTER",    "payout_per_dollar": 12.5 },
-      { "player_name": "Mason Graham",    "yes_price": 0.06, "no_price": 0.94, "ticker": "KXNFLDRAFT-2-MASONGRAHAM",    "payout_per_dollar": 16.7 }
+      { "player_name": "Arvell Reese",     "yes_price": 0.55, "no_price": 0.45, "ticker": "KXNFLDRAFT-2-ARVELLREESE",     "payout_per_dollar": 1.82 },
+      { "player_name": "Jeremiyah Love",   "yes_price": 0.20, "no_price": 0.80, "ticker": "KXNFLDRAFT-2-JEREMIYAHLOVE",  "payout_per_dollar": 5.00 },
+      { "player_name": "Sonny Styles",     "yes_price": 0.14, "no_price": 0.86, "ticker": "KXNFLDRAFT-2-SONNYSTYLES",     "payout_per_dollar": 7.14 },
+      { "player_name": "Caleb Downs",      "yes_price": 0.06, "no_price": 0.94, "ticker": "KXNFLDRAFT-2-CALEBDOWNS",      "payout_per_dollar": 16.7 }
     ],
     "3": [
-      { "player_name": "Travis Hunter",   "yes_price": 0.44, "no_price": 0.56, "ticker": "KXNFLDRAFT-3-TRAVISHUNTER",   "payout_per_dollar": 2.27 },
-      { "player_name": "Abdul Carter",    "yes_price": 0.28, "no_price": 0.72, "ticker": "KXNFLDRAFT-3-ABDULCARTER",    "payout_per_dollar": 3.57 },
-      { "player_name": "Mason Graham",    "yes_price": 0.12, "no_price": 0.88, "ticker": "KXNFLDRAFT-3-MASONGRAHAM",    "payout_per_dollar": 8.33 },
-      { "player_name": "Will Johnson",    "yes_price": 0.08, "no_price": 0.92, "ticker": "KXNFLDRAFT-3-WILLJOHNSON",    "payout_per_dollar": 12.5 },
-      { "player_name": "Tetairoa McMillan","yes_price": 0.04,"no_price": 0.96, "ticker": "KXNFLDRAFT-3-TETAIROAMCMILLAN","payout_per_dollar": 25.0 }
+      { "player_name": "Jeremiyah Love",   "yes_price": 0.42, "no_price": 0.58, "ticker": "KXNFLDRAFT-3-JEREMIYAHLOVE",  "payout_per_dollar": 2.38 },
+      { "player_name": "Sonny Styles",     "yes_price": 0.28, "no_price": 0.72, "ticker": "KXNFLDRAFT-3-SONNYSTYLES",     "payout_per_dollar": 3.57 },
+      { "player_name": "Caleb Downs",      "yes_price": 0.14, "no_price": 0.86, "ticker": "KXNFLDRAFT-3-CALEBDOWNS",      "payout_per_dollar": 7.14 },
+      { "player_name": "Francis Mauigoa", "yes_price": 0.08, "no_price": 0.92, "ticker": "KXNFLDRAFT-3-FRANCISMAUIGOA",  "payout_per_dollar": 12.5 },
+      { "player_name": "David Bailey",    "yes_price": 0.04, "no_price": 0.96, "ticker": "KXNFLDRAFT-3-DAVIDBAILEY",     "payout_per_dollar": 25.0 }
     ],
     "4": [
-      { "player_name": "Abdul Carter",    "yes_price": 0.51, "no_price": 0.49, "ticker": "KXNFLDRAFT-4-ABDULCARTER",    "payout_per_dollar": 1.96 },
-      { "player_name": "Will Johnson",    "yes_price": 0.22, "no_price": 0.78, "ticker": "KXNFLDRAFT-4-WILLJOHNSON",    "payout_per_dollar": 4.55 },
-      { "player_name": "Mason Graham",    "yes_price": 0.14, "no_price": 0.86, "ticker": "KXNFLDRAFT-4-MASONGRAHAM",    "payout_per_dollar": 7.14 },
-      { "player_name": "Tetairoa McMillan","yes_price": 0.07,"no_price": 0.93, "ticker": "KXNFLDRAFT-4-TETAIROAMCMILLAN","payout_per_dollar": 14.3 }
+      { "player_name": "Sonny Styles",     "yes_price": 0.44, "no_price": 0.56, "ticker": "KXNFLDRAFT-4-SONNYSTYLES",     "payout_per_dollar": 2.27 },
+      { "player_name": "Caleb Downs",      "yes_price": 0.26, "no_price": 0.74, "ticker": "KXNFLDRAFT-4-CALEBDOWNS",      "payout_per_dollar": 3.85 },
+      { "player_name": "Francis Mauigoa", "yes_price": 0.16, "no_price": 0.84, "ticker": "KXNFLDRAFT-4-FRANCISMAUIGOA",  "payout_per_dollar": 6.25 },
+      { "player_name": "David Bailey",    "yes_price": 0.08, "no_price": 0.92, "ticker": "KXNFLDRAFT-4-DAVIDBAILEY",     "payout_per_dollar": 12.5 }
     ],
     "5": [
-      { "player_name": "Will Johnson",    "yes_price": 0.38, "no_price": 0.62, "ticker": "KXNFLDRAFT-5-WILLJOHNSON",    "payout_per_dollar": 2.63 },
-      { "player_name": "Mason Graham",    "yes_price": 0.27, "no_price": 0.73, "ticker": "KXNFLDRAFT-5-MASONGRAHAM",    "payout_per_dollar": 3.70 },
-      { "player_name": "Tetairoa McMillan","yes_price": 0.16,"no_price": 0.84, "ticker": "KXNFLDRAFT-5-TETAIROAMCMILLAN","payout_per_dollar": 6.25 },
-      { "player_name": "Jalon Walker",    "yes_price": 0.09, "no_price": 0.91, "ticker": "KXNFLDRAFT-5-JALONWALKER",    "payout_per_dollar": 11.1 },
-      { "player_name": "Ashton Jeanty",   "yes_price": 0.05, "no_price": 0.95, "ticker": "KXNFLDRAFT-5-ASHTONJEANTY",   "payout_per_dollar": 20.0 }
+      { "player_name": "Caleb Downs",      "yes_price": 0.35, "no_price": 0.65, "ticker": "KXNFLDRAFT-5-CALEBDOWNS",      "payout_per_dollar": 2.86 },
+      { "player_name": "Francis Mauigoa", "yes_price": 0.28, "no_price": 0.72, "ticker": "KXNFLDRAFT-5-FRANCISMAUIGOA",  "payout_per_dollar": 3.57 },
+      { "player_name": "David Bailey",    "yes_price": 0.18, "no_price": 0.82, "ticker": "KXNFLDRAFT-5-DAVIDBAILEY",     "payout_per_dollar": 5.56 },
+      { "player_name": "Mansoor Delane",  "yes_price": 0.10, "no_price": 0.90, "ticker": "KXNFLDRAFT-5-MANSOORDELANE",   "payout_per_dollar": 10.0 }
     ],
     "6": [
-      { "player_name": "Mason Graham",    "yes_price": 0.41, "no_price": 0.59, "ticker": "KXNFLDRAFT-6-MASONGRAHAM",    "payout_per_dollar": 2.44 },
-      { "player_name": "Tetairoa McMillan","yes_price": 0.24,"no_price": 0.76, "ticker": "KXNFLDRAFT-6-TETAIROAMCMILLAN","payout_per_dollar": 4.17 },
-      { "player_name": "Jalon Walker",    "yes_price": 0.15, "no_price": 0.85, "ticker": "KXNFLDRAFT-6-JALONWALKER",    "payout_per_dollar": 6.67 },
-      { "player_name": "Ashton Jeanty",   "yes_price": 0.10, "no_price": 0.90, "ticker": "KXNFLDRAFT-6-ASHTONJEANTY",   "payout_per_dollar": 10.0 }
+      { "player_name": "Francis Mauigoa", "yes_price": 0.38, "no_price": 0.62, "ticker": "KXNFLDRAFT-6-FRANCISMAUIGOA",  "payout_per_dollar": 2.63 },
+      { "player_name": "David Bailey",    "yes_price": 0.29, "no_price": 0.71, "ticker": "KXNFLDRAFT-6-DAVIDBAILEY",     "payout_per_dollar": 3.45 },
+      { "player_name": "Mansoor Delane",  "yes_price": 0.18, "no_price": 0.82, "ticker": "KXNFLDRAFT-6-MANSOORDELANE",   "payout_per_dollar": 5.56 },
+      { "player_name": "Carnell Tate",    "yes_price": 0.09, "no_price": 0.91, "ticker": "KXNFLDRAFT-6-CARNELLTATE",     "payout_per_dollar": 11.1 }
     ],
     "7": [
-      { "player_name": "Tetairoa McMillan","yes_price": 0.35,"no_price": 0.65, "ticker": "KXNFLDRAFT-7-TETAIROAMCMILLAN","payout_per_dollar": 2.86 },
-      { "player_name": "Jalon Walker",    "yes_price": 0.28, "no_price": 0.72, "ticker": "KXNFLDRAFT-7-JALONWALKER",    "payout_per_dollar": 3.57 },
-      { "player_name": "Ashton Jeanty",   "yes_price": 0.16, "no_price": 0.84, "ticker": "KXNFLDRAFT-7-ASHTONJEANTY",   "payout_per_dollar": 6.25 },
-      { "player_name": "Malaki Starks",   "yes_price": 0.11, "no_price": 0.89, "ticker": "KXNFLDRAFT-7-MALAKILSTARKS",  "payout_per_dollar": 9.09 }
+      { "player_name": "David Bailey",    "yes_price": 0.36, "no_price": 0.64, "ticker": "KXNFLDRAFT-7-DAVIDBAILEY",     "payout_per_dollar": 2.78 },
+      { "player_name": "Mansoor Delane",  "yes_price": 0.27, "no_price": 0.73, "ticker": "KXNFLDRAFT-7-MANSOORDELANE",   "payout_per_dollar": 3.70 },
+      { "player_name": "Carnell Tate",    "yes_price": 0.18, "no_price": 0.82, "ticker": "KXNFLDRAFT-7-CARNELLTATE",     "payout_per_dollar": 5.56 },
+      { "player_name": "Spencer Fano",    "yes_price": 0.12, "no_price": 0.88, "ticker": "KXNFLDRAFT-7-SPENCERFANO",     "payout_per_dollar": 8.33 }
     ],
     "8": [
-      { "player_name": "Jalon Walker",    "yes_price": 0.33, "no_price": 0.67, "ticker": "KXNFLDRAFT-8-JALONWALKER",    "payout_per_dollar": 3.03 },
-      { "player_name": "Ashton Jeanty",   "yes_price": 0.29, "no_price": 0.71, "ticker": "KXNFLDRAFT-8-ASHTONJEANTY",   "payout_per_dollar": 3.45 },
-      { "player_name": "Malaki Starks",   "yes_price": 0.18, "no_price": 0.82, "ticker": "KXNFLDRAFT-8-MALAKILSTARKS",  "payout_per_dollar": 5.56 },
-      { "player_name": "Kelvin Banks Jr.","yes_price": 0.12, "no_price": 0.88, "ticker": "KXNFLDRAFT-8-KELVINBANKSJR",  "payout_per_dollar": 8.33 }
+      { "player_name": "Mansoor Delane",  "yes_price": 0.32, "no_price": 0.68, "ticker": "KXNFLDRAFT-8-MANSOORDELANE",   "payout_per_dollar": 3.13 },
+      { "player_name": "Carnell Tate",    "yes_price": 0.26, "no_price": 0.74, "ticker": "KXNFLDRAFT-8-CARNELLTATE",     "payout_per_dollar": 3.85 },
+      { "player_name": "Spencer Fano",    "yes_price": 0.20, "no_price": 0.80, "ticker": "KXNFLDRAFT-8-SPENCERFANO",     "payout_per_dollar": 5.00 },
+      { "player_name": "Makai Lemon",     "yes_price": 0.12, "no_price": 0.88, "ticker": "KXNFLDRAFT-8-MAKAILE MON",     "payout_per_dollar": 8.33 }
     ],
     "9": [
-      { "player_name": "Ashton Jeanty",   "yes_price": 0.30, "no_price": 0.70, "ticker": "KXNFLDRAFT-9-ASHTONJEANTY",   "payout_per_dollar": 3.33 },
-      { "player_name": "Malaki Starks",   "yes_price": 0.26, "no_price": 0.74, "ticker": "KXNFLDRAFT-9-MALAKILSTARKS",  "payout_per_dollar": 3.85 },
-      { "player_name": "Kelvin Banks Jr.","yes_price": 0.20, "no_price": 0.80, "ticker": "KXNFLDRAFT-9-KELVINBANKSJR",  "payout_per_dollar": 5.00 },
-      { "player_name": "Luther Burden III","yes_price": 0.13,"no_price": 0.87, "ticker": "KXNFLDRAFT-9-LUTHERBURDENIII", "payout_per_dollar": 7.69 }
+      { "player_name": "Carnell Tate",    "yes_price": 0.30, "no_price": 0.70, "ticker": "KXNFLDRAFT-9-CARNELLTATE",     "payout_per_dollar": 3.33 },
+      { "player_name": "Spencer Fano",    "yes_price": 0.24, "no_price": 0.76, "ticker": "KXNFLDRAFT-9-SPENCERFANO",     "payout_per_dollar": 4.17 },
+      { "player_name": "Makai Lemon",     "yes_price": 0.20, "no_price": 0.80, "ticker": "KXNFLDRAFT-9-MAKAILEMON",      "payout_per_dollar": 5.00 },
+      { "player_name": "Rueben Bain Jr.", "yes_price": 0.14, "no_price": 0.86, "ticker": "KXNFLDRAFT-9-RUEBENBAINJR",    "payout_per_dollar": 7.14 }
     ],
     "10": [
-      { "player_name": "Malaki Starks",   "yes_price": 0.28, "no_price": 0.72, "ticker": "KXNFLDRAFT-10-MALAKILSTARKS", "payout_per_dollar": 3.57 },
-      { "player_name": "Kelvin Banks Jr.","yes_price": 0.24, "no_price": 0.76, "ticker": "KXNFLDRAFT-10-KELVINBANKSJR", "payout_per_dollar": 4.17 },
-      { "player_name": "Luther Burden III","yes_price": 0.19,"no_price": 0.81, "ticker": "KXNFLDRAFT-10-LUTHERBURDENIII","payout_per_dollar": 5.26 },
-      { "player_name": "Nick Emmanwori", "yes_price": 0.14, "no_price": 0.86, "ticker": "KXNFLDRAFT-10-NICKEMMANWORI",  "payout_per_dollar": 7.14 },
-      { "player_name": "Jihaad Campbell", "yes_price": 0.08, "no_price": 0.92, "ticker": "KXNFLDRAFT-10-JIHAADCAMPBELL", "payout_per_dollar": 12.5 }
+      { "player_name": "Spencer Fano",    "yes_price": 0.28, "no_price": 0.72, "ticker": "KXNFLDRAFT-10-SPENCERFANO",    "payout_per_dollar": 3.57 },
+      { "player_name": "Makai Lemon",     "yes_price": 0.24, "no_price": 0.76, "ticker": "KXNFLDRAFT-10-MAKAILEMON",     "payout_per_dollar": 4.17 },
+      { "player_name": "Rueben Bain Jr.", "yes_price": 0.20, "no_price": 0.80, "ticker": "KXNFLDRAFT-10-RUEBENBAINJR",   "payout_per_dollar": 5.00 },
+      { "player_name": "Olaivavega Ioane","yes_price": 0.14, "no_price": 0.86, "ticker": "KXNFLDRAFT-10-OLAIVAVEGAIOANE","payout_per_dollar": 7.14 },
+      { "player_name": "Kenyon Sadiq",    "yes_price": 0.08, "no_price": 0.92, "ticker": "KXNFLDRAFT-10-KENYONSADIQ",    "payout_per_dollar": 12.5 }
     ]
   },
   "history": {
-    "1":  [
-      { "player_name": "Cam Ward",        "avg_7day": 0.88 },
-      { "player_name": "Shedeur Sanders", "avg_7day": 0.07 },
-      { "player_name": "Travis Hunter",   "avg_7day": 0.03 }
+    "1": [
+      { "player_name": "Fernando Mendoza", "avg_7day": 0.88 },
+      { "player_name": "Arvell Reese",     "avg_7day": 0.07 },
+      { "player_name": "Jeremiyah Love",   "avg_7day": 0.03 }
     ],
-    "2":  [
-      { "player_name": "Shedeur Sanders", "avg_7day": 0.58 },
-      { "player_name": "Travis Hunter",   "avg_7day": 0.20 },
-      { "player_name": "Abdul Carter",    "avg_7day": 0.10 },
-      { "player_name": "Mason Graham",    "avg_7day": 0.05 }
+    "2": [
+      { "player_name": "Arvell Reese",     "avg_7day": 0.50 },
+      { "player_name": "Jeremiyah Love",   "avg_7day": 0.22 },
+      { "player_name": "Sonny Styles",     "avg_7day": 0.16 },
+      { "player_name": "Caleb Downs",      "avg_7day": 0.06 }
     ],
-    "3":  [
-      { "player_name": "Travis Hunter",   "avg_7day": 0.40 },
-      { "player_name": "Abdul Carter",    "avg_7day": 0.30 },
-      { "player_name": "Mason Graham",    "avg_7day": 0.14 },
-      { "player_name": "Will Johnson",    "avg_7day": 0.09 },
-      { "player_name": "Tetairoa McMillan","avg_7day": 0.05 }
+    "3": [
+      { "player_name": "Jeremiyah Love",   "avg_7day": 0.38 },
+      { "player_name": "Sonny Styles",     "avg_7day": 0.30 },
+      { "player_name": "Caleb Downs",      "avg_7day": 0.16 },
+      { "player_name": "Francis Mauigoa", "avg_7day": 0.09 }
     ]
   }
 }

@@ -39,29 +39,29 @@
       "rank": 4
     },
     {
-      "position": "LB",
+      "position": "WR",
       "rank": 5
     }
   ],
   "NYG": [
     {
-      "position": "QB",
+      "position": "EDGE",
       "rank": 1
     },
     {
-      "position": "OT",
+      "position": "CB",
       "rank": 2
     },
     {
-      "position": "EDGE",
+      "position": "WR",
       "rank": 3
     },
     {
-      "position": "WR",
+      "position": "OT",
       "rank": 4
     },
     {
-      "position": "CB",
+      "position": "DT",
       "rank": 5
     }
   ],
@@ -71,7 +71,7 @@
       "rank": 1
     },
     {
-      "position": "OT",
+      "position": "EDGE",
       "rank": 2
     },
     {
@@ -79,7 +79,7 @@
       "rank": 3
     },
     {
-      "position": "EDGE",
+      "position": "OT",
       "rank": 4
     },
     {
@@ -93,7 +93,7 @@
       "rank": 1
     },
     {
-      "position": "OT",
+      "position": "DT",
       "rank": 2
     },
     {
@@ -101,11 +101,11 @@
       "rank": 3
     },
     {
-      "position": "S",
+      "position": "OT",
       "rank": 4
     },
     {
-      "position": "IOL",
+      "position": "S",
       "rank": 5
     }
   ],
@@ -115,7 +115,7 @@
       "rank": 1
     },
     {
-      "position": "OT",
+      "position": "DT",
       "rank": 2
     },
     {
@@ -123,7 +123,7 @@
       "rank": 3
     },
     {
-      "position": "DT",
+      "position": "OT",
       "rank": 4
     },
     {
@@ -133,23 +133,23 @@
   ],
   "NYJ": [
     {
-      "position": "EDGE",
+      "position": "QB",
       "rank": 1
     },
     {
-      "position": "CB",
+      "position": "EDGE",
       "rank": 2
     },
     {
-      "position": "OT",
+      "position": "CB",
       "rank": 3
     },
     {
-      "position": "WR",
+      "position": "S",
       "rank": 4
     },
     {
-      "position": "S",
+      "position": "OT",
       "rank": 5
     }
   ],
@@ -163,11 +163,11 @@
       "rank": 2
     },
     {
-      "position": "OT",
+      "position": "WR",
       "rank": 3
     },
     {
-      "position": "WR",
+      "position": "OT",
       "rank": 4
     },
     {
@@ -181,19 +181,19 @@
       "rank": 1
     },
     {
-      "position": "DT",
+      "position": "CB",
       "rank": 2
     },
     {
-      "position": "CB",
+      "position": "WR",
       "rank": 3
     },
     {
-      "position": "OT",
+      "position": "DT",
       "rank": 4
     },
     {
-      "position": "WR",
+      "position": "IOL",
       "rank": 5
     }
   ],
@@ -203,15 +203,15 @@
       "rank": 1
     },
     {
-      "position": "IOL",
+      "position": "CB",
       "rank": 2
     },
     {
-      "position": "CB",
+      "position": "S",
       "rank": 3
     },
     {
-      "position": "S",
+      "position": "OT",
       "rank": 4
     },
     {
@@ -233,7 +233,7 @@
       "rank": 3
     },
     {
-      "position": "S",
+      "position": "IOL",
       "rank": 4
     },
     {
@@ -265,23 +265,23 @@
   ],
   "MIA": [
     {
-      "position": "OT",
+      "position": "EDGE",
       "rank": 1
     },
     {
-      "position": "EDGE",
+      "position": "OT",
       "rank": 2
     },
     {
-      "position": "IOL",
+      "position": "CB",
       "rank": 3
     },
     {
-      "position": "CB",
+      "position": "S",
       "rank": 4
     },
     {
-      "position": "S",
+      "position": "DT",
       "rank": 5
     }
   ],
@@ -295,15 +295,15 @@
       "rank": 2
     },
     {
-      "position": "WR",
+      "position": "DT",
       "rank": 3
     },
     {
-      "position": "DT",
+      "position": "WR",
       "rank": 4
     },
     {
-      "position": "S",
+      "position": "OT",
       "rank": 5
     }
   ],
@@ -313,19 +313,19 @@
       "rank": 1
     },
     {
-      "position": "DT",
+      "position": "CB",
       "rank": 2
     },
     {
-      "position": "CB",
+      "position": "S",
       "rank": 3
     },
     {
-      "position": "S",
+      "position": "DT",
       "rank": 4
     },
     {
-      "position": "OT",
+      "position": "WR",
       "rank": 5
     }
   ],
@@ -339,15 +339,15 @@
       "rank": 2
     },
     {
-      "position": "OT",
+      "position": "DT",
       "rank": 3
     },
     {
-      "position": "DT",
+      "position": "OT",
       "rank": 4
     },
     {
-      "position": "WR",
+      "position": "LB",
       "rank": 5
     }
   ],
@@ -357,19 +357,19 @@
       "rank": 1
     },
     {
-      "position": "CB",
+      "position": "DT",
       "rank": 2
     },
     {
-      "position": "OT",
+      "position": "CB",
       "rank": 3
     },
     {
-      "position": "S",
+      "position": "OT",
       "rank": 4
     },
     {
-      "position": "DT",
+      "position": "S",
       "rank": 5
     }
   ],
@@ -379,11 +379,11 @@
       "rank": 1
     },
     {
-      "position": "OT",
+      "position": "CB",
       "rank": 2
     },
     {
-      "position": "CB",
+      "position": "OT",
       "rank": 3
     },
     {
@@ -401,11 +401,11 @@
       "rank": 1
     },
     {
-      "position": "OT",
+      "position": "CB",
       "rank": 2
     },
     {
-      "position": "CB",
+      "position": "WR",
       "rank": 3
     },
     {
@@ -427,7 +427,7 @@
       "rank": 2
     },
     {
-      "position": "S",
+      "position": "DT",
       "rank": 3
     },
     {
@@ -435,7 +435,7 @@
       "rank": 4
     },
     {
-      "position": "WR",
+      "position": "TE",
       "rank": 5
     }
   ],
@@ -445,15 +445,15 @@
       "rank": 1
     },
     {
-      "position": "EDGE",
+      "position": "CB",
       "rank": 2
     },
     {
-      "position": "WR",
+      "position": "EDGE",
       "rank": 3
     },
     {
-      "position": "CB",
+      "position": "WR",
       "rank": 4
     },
     {
@@ -475,11 +475,11 @@
       "rank": 3
     },
     {
-      "position": "S",
+      "position": "DT",
       "rank": 4
     },
     {
-      "position": "DT",
+      "position": "S",
       "rank": 5
     }
   ],
@@ -493,15 +493,15 @@
       "rank": 2
     },
     {
-      "position": "S",
+      "position": "DT",
       "rank": 3
     },
     {
-      "position": "DT",
+      "position": "WR",
       "rank": 4
     },
     {
-      "position": "WR",
+      "position": "S",
       "rank": 5
     }
   ],
@@ -515,37 +515,37 @@
       "rank": 2
     },
     {
-      "position": "S",
+      "position": "DT",
       "rank": 3
     },
     {
-      "position": "DT",
+      "position": "S",
       "rank": 4
     },
     {
-      "position": "OT",
+      "position": "WR",
       "rank": 5
     }
   ],
   "HOU": [
     {
-      "position": "CB",
+      "position": "EDGE",
       "rank": 1
     },
     {
-      "position": "EDGE",
+      "position": "DT",
       "rank": 2
     },
     {
-      "position": "DT",
+      "position": "CB",
       "rank": 3
     },
     {
-      "position": "S",
+      "position": "WR",
       "rank": 4
     },
     {
-      "position": "IOL",
+      "position": "OT",
       "rank": 5
     }
   ],
@@ -585,7 +585,7 @@
       "rank": 3
     },
     {
-      "position": "S",
+      "position": "CB",
       "rank": 4
     },
     {
@@ -603,15 +603,15 @@
       "rank": 2
     },
     {
-      "position": "S",
+      "position": "CB",
       "rank": 3
     },
     {
-      "position": "CB",
+      "position": "OT",
       "rank": 4
     },
     {
-      "position": "IOL",
+      "position": "S",
       "rank": 5
     }
   ],
@@ -629,11 +629,11 @@
       "rank": 3
     },
     {
-      "position": "DT",
+      "position": "WR",
       "rank": 4
     },
     {
-      "position": "WR",
+      "position": "DT",
       "rank": 5
     }
   ],
@@ -665,19 +665,19 @@
       "rank": 1
     },
     {
-      "position": "CB",
+      "position": "OT",
       "rank": 2
     },
     {
-      "position": "OT",
+      "position": "CB",
       "rank": 3
     },
     {
-      "position": "S",
+      "position": "DT",
       "rank": 4
     },
     {
-      "position": "DT",
+      "position": "WR",
       "rank": 5
     }
   ],
@@ -699,7 +699,7 @@
       "rank": 4
     },
     {
-      "position": "IOL",
+      "position": "OT",
       "rank": 5
     }
   ]
