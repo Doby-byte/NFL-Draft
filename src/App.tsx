@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { QueryClient, QueryClientProvider, useQueryClient } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useDraftStore } from '@/stores/draftStore';
 import { useStartupData } from '@/hooks/useStartupData';
 import { useKalshiPolling } from '@/hooks/useKalshiPolling';
@@ -31,26 +31,20 @@ const TABS: { key: Tab; label: string }[] = [
 function DraftApp() {
   useStartupData();
   useKalshiPolling();
-  const { skipToPhase2 } = usePhaseEngine();
+  const { runAnalysisNow } = usePhaseEngine();
 
   const [tab, setTab]         = useState<Tab>('dashboard');
   const [showModal, setShowModal] = useState(false);
   const { setShowHistory, currentPickIndex, completedPicks, players,
           draftModeActive, setDraftModeActive } = useDraftStore();
-  const qc = useQueryClient();
   const [aiLoading, setAiLoading] = useState(false);
 
   const slot = NFL_DRAFT_ORDER[currentPickIndex];
   const isDraftComplete = currentPickIndex >= NFL_DRAFT_ORDER.length;
 
-  function forcePoll() {
-    if (!slot) return;
-    qc.invalidateQueries({ queryKey: ['kalshi-odds', slot.pick_number] });
-  }
-
-  async function handleSkipToPhase2() {
+  async function handleAINow() {
     setAiLoading(true);
-    await skipToPhase2();
+    try { await runAnalysisNow(); } catch (e) { console.error(e); }
     setAiLoading(false);
   }
 
@@ -111,19 +105,12 @@ function DraftApp() {
             {!isDraftComplete && slot && tab === 'dashboard' && (
               <>
                 <button
-                  onClick={forcePoll}
-                  className="text-xs bg-slate-700 hover:bg-slate-600 text-yellow-400 px-2.5 py-1.5 rounded-lg transition-colors font-semibold"
-                  title="Force an immediate Kalshi fetch + COMPASS run"
-                >
-                  ⚡ Poll
-                </button>
-                <button
-                  onClick={handleSkipToPhase2}
+                  onClick={handleAINow}
                   disabled={aiLoading}
                   className="text-xs bg-purple-700 hover:bg-purple-600 disabled:opacity-50 text-white px-2.5 py-1.5 rounded-lg font-semibold transition-colors"
-                  title="Fire Claude now — skip waiting for poll #3"
+                  title="Fetch odds + run COMPASS + fire Claude immediately"
                 >
-                  {aiLoading ? '⏳ AI...' : '🤖 AI Now'}
+                  {aiLoading ? '⏳ Analyzing...' : '🤖 AI Now'}
                 </button>
                 <button
                   onClick={() => setShowModal(true)}
