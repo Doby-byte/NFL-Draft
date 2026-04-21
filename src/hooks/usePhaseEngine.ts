@@ -81,13 +81,21 @@ export function usePhaseEngine() {
     const allNeeds = teamNeeds[slot.team_abbr] ?? [];
     const ALL_POS  = ['QB','RB','WR','TE','OT','IOL','EDGE','DT','LB','CB','S'];
     const needSet  = new Set(allNeeds.map(n => n.position));
+    // Top 5 players for pre-loaded steelman (batched into same AI call, saves Why? round-trips)
+    const top5ForSteelman = compassRes.slice(0, 5).map(r => ({
+      name:        r.player.name,
+      position:    r.player.position,
+      school:      r.player.school,
+      kalshi_pct:  Math.round(r.kalshi_yes_price * 100),
+      compass:     Math.round(r.compass_score),
+    }));
+
     return {
       pick: slot.pick_number,
       team: slot.team_abbr,
-      // Full ranked list — rank 1 = top need, rank 5 = minor
       team_needs_ranked: allNeeds,
-      // Positions with ZERO organizational need — do not recommend these
       team_no_need: ALL_POS.filter(p => !needSet.has(p)),
+      top_players_for_steelman: top5ForSteelman,
       top_player: {
         name: top.player.name, position: top.player.position,
         compass: top.compass_score, edge_vs_market: betDec.edge,

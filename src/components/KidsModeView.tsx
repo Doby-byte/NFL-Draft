@@ -6,13 +6,15 @@ import { espnLogoUrl } from '@/lib/utils';
 import { NFL_DRAFT_ORDER } from '@/types';
 import type { CompassResult } from '@/types';
 
-// ASSUMPTION: Letter grade based on Kalshi yes_price * 100
-function letterGrade(price: number): string {
-  const pct = price * 100;
-  if (pct >= 90) return 'A';
-  if (pct >= 80) return 'B';
-  if (pct >= 70) return 'C';
-  if (pct >= 60) return 'D';
+// Grade based on share of probability among the shown top-3.
+// Fixes the problem where top pick at 55% would show an F under absolute thresholds.
+// Instead: how much of the "who gets picked" probability does this player own vs the field?
+function letterGrade(price: number, top3Sum: number): string {
+  const share = top3Sum > 0 ? price / top3Sum : 0;
+  if (share >= 0.50) return 'A';  // owns >50% of shown probability — clear favorite
+  if (share >= 0.33) return 'B';  // roughly tied for top or strong lean
+  if (share >= 0.20) return 'C';  // decent contender
+  if (share >= 0.12) return 'D';  // longshot among top 3
   return 'F';
 }
 
@@ -69,6 +71,8 @@ export function KidsModeView() {
     .filter(r => r.kalshi_yes_price > 0.01)
     .slice(0, 3);
 
+  const top3Sum = top3.reduce((s, r) => s + r.kalshi_yes_price, 0);
+
   if (top3.length === 0) {
     return (
       <div className="text-center py-16 space-y-4">
@@ -121,9 +125,13 @@ export function KidsModeView() {
 
       {/* Top 3 cards */}
       {top3.map((r, i) => {
-        const grade    = letterGrade(r.kalshi_yes_price);
+        const grade    = letterGrade(r.kalshi_yes_price, top3Sum);
         const pct      = Math.round(r.kalshi_yes_price * 100);
-        const payout   = r.kalshi_yes_price > 0 ? (1 / r.kalshi_yes_price).toFixed(2) : '0.00';
+        // Show earnings (profit on $1 bet), not total payout
+        const earnings = r.kalshi_yes_price > 0 ? ((1 / r.kalshi_yes_price) - 1) : 0;
+        const earningsStr = earnings >= 0.995
+          ? `$${earnings.toFixed(2)}`
+          : `¢${Math.round(earnings * 100)}`;
         const firstName = r.player.name.split(' ')[0];
         // ASSUMPTION: teamNeeds rank — use s5_team_need signal as proxy (0-1 → rank 1-5)
         const needRank = Math.round((1 - r.signals.s5_team_need) * 4) + 1;
@@ -161,7 +169,7 @@ export function KidsModeView() {
             {/* Win callout */}
             <div className="flex items-center justify-between">
               <div className="bg-green-500/20 border border-green-500/40 text-green-300 text-sm font-bold px-3 py-1.5 rounded-full">
-                💰 Win ${payout}!
+                💰 Earn {earningsStr}!
               </div>
               {isMyPick && (
                 <div className="text-white font-bold text-sm">✅ Your pick!</div>

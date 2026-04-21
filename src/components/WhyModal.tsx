@@ -1,15 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NFL_DRAFT_ORDER } from '@/types';
 import { useDraftStore } from '@/stores/draftStore';
-import type { CompassResult } from '@/types';
+import type { CompassResult, SteelMan } from '@/types';
 
 const SUPABASE_URL  = import.meta.env.VITE_SUPABASE_URL  as string;
 const SUPABASE_ANON = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
-
-interface SteelManResult {
-  for:     string[];
-  against: string[];
-}
 
 interface Props {
   result: CompassResult;
@@ -17,11 +12,20 @@ interface Props {
 }
 
 export function WhyModal({ result, onClose }: Props) {
-  const { currentPickIndex } = useDraftStore();
+  const { currentPickIndex, aiAnalysis } = useDraftStore();
   const slot = NFL_DRAFT_ORDER[currentPickIndex];
-  const [data, setData]   = useState<SteelManResult | null>(null);
-  const [loading, setLoading] = useState(false);
+
+  // Check cache first — steelmans are pre-loaded when AI summary fires
+  const cached = aiAnalysis?.steelmans?.[result.player.name] ?? null;
+
+  const [data, setData]     = useState<SteelMan | null>(cached);
+  const [loading, setLoading] = useState(!cached);
   const [error, setError]   = useState<string | null>(null);
+
+  useEffect(() => {
+    if (cached) return; // already have it — no fetch needed
+    fetchWhy();
+  }, []);
 
   async function fetchWhy() {
     setLoading(true);
@@ -49,16 +53,13 @@ export function WhyModal({ result, onClose }: Props) {
       if (!res.ok) throw new Error(`${res.status}`);
       const json = await res.json();
       if (json.error) throw new Error(json.error);
-      setData(json as SteelManResult);
+      setData(json as SteelMan);
     } catch (e) {
       setError(String(e));
     } finally {
       setLoading(false);
     }
   }
-
-  // Auto-fetch on mount
-  useState(() => { fetchWhy(); });
 
   return (
     <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4" onClick={onClose}>
@@ -67,14 +68,17 @@ export function WhyModal({ result, onClose }: Props) {
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="sticky top-0 bg-slate-800 border-b border-slate-700 px-5 py-4 flex items-center justify-between">
+        <div className="sticky top-0 bg-slate-800 border-b border-slate-700 px-5 py-4 flex items-center justify-between gap-3">
           <div>
             <div className="text-base font-bold text-white">{result.player.name}</div>
-            <div className="text-xs text-slate-400">{result.player.position} · Pick #{slot?.pick_number} · {slot?.team_abbr} · {result.kalshi_yes_price > 0 ? Math.round(result.kalshi_yes_price * 100) + '¢' : '—'}</div>
+            <div className="text-xs text-slate-400 flex items-center gap-2">
+              {result.player.position} · Pick #{slot?.pick_number} · {slot?.team_abbr} · {Math.round(result.kalshi_yes_price * 100)}¢
+              {cached && <span className="text-green-600 text-xs">⚡ pre-loaded</span>}
+            </div>
           </div>
           <button
             onClick={onClose}
-            className="text-slate-400 hover:text-white bg-slate-700 hover:bg-slate-600 rounded-lg px-4 py-2 text-sm font-semibold transition-colors"
+            className="shrink-0 text-slate-400 hover:text-white bg-slate-700 hover:bg-slate-600 rounded-lg px-4 py-2 text-sm font-semibold transition-colors"
           >
             Close ✕
           </button>
@@ -88,7 +92,6 @@ export function WhyModal({ result, onClose }: Props) {
               <div className="text-slate-400 text-sm">Analyzing {result.player.name}...</div>
             </div>
           )}
-
           {error && (
             <div className="text-red-400 text-sm text-center py-8">
               <div className="text-2xl mb-2">⚠️</div>
@@ -96,36 +99,30 @@ export function WhyModal({ result, onClose }: Props) {
               <button onClick={fetchWhy} className="block mx-auto mt-3 text-blue-400 underline text-xs">Retry</button>
             </div>
           )}
-
           {data && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* FOR */}
               <div className="bg-green-900/20 border border-green-700/40 rounded-xl p-4 space-y-3">
                 <div className="flex items-center gap-2">
                   <span className="text-green-400 text-lg">✅</span>
                   <span className="text-green-300 font-bold text-sm uppercase tracking-wider">For</span>
                 </div>
                 <ul className="space-y-2">
-                  {data.for.map((reason, i) => (
+                  {data.for.map((r, i) => (
                     <li key={i} className="text-slate-200 text-sm leading-snug flex gap-2">
-                      <span className="text-green-500 shrink-0 mt-0.5">•</span>
-                      {reason}
+                      <span className="text-green-500 shrink-0 mt-0.5">•</span>{r}
                     </li>
                   ))}
                 </ul>
               </div>
-
-              {/* AGAINST */}
               <div className="bg-red-900/20 border border-red-700/40 rounded-xl p-4 space-y-3">
                 <div className="flex items-center gap-2">
                   <span className="text-red-400 text-lg">❌</span>
                   <span className="text-red-300 font-bold text-sm uppercase tracking-wider">Against</span>
                 </div>
                 <ul className="space-y-2">
-                  {data.against.map((reason, i) => (
+                  {data.against.map((r, i) => (
                     <li key={i} className="text-slate-200 text-sm leading-snug flex gap-2">
-                      <span className="text-red-500 shrink-0 mt-0.5">•</span>
-                      {reason}
+                      <span className="text-red-500 shrink-0 mt-0.5">•</span>{r}
                     </li>
                   ))}
                 </ul>

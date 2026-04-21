@@ -92,13 +92,19 @@ export interface BetDecision {
   bot_guess_confidence: Confidence;
 }
 
+export interface SteelMan {
+  for:     string[];
+  against: string[];
+}
+
 export interface AIAnalysis {
-  pick_rationale: string;    // Mel Kiper para: team fit / why this pick
-  rationale: string;         // COMPASS/bet para: succinct score reasoning
-  sentiment_summary: string; // one-liner: breaking news / insider signals
+  pick_rationale: string;
+  rationale: string;
+  sentiment_summary: string;
   sentiment_score: number;
   final_recommendation: BetCall;
   confidence: Confidence;
+  steelmans?: Record<string, SteelMan>;  // player_name → for/against, pre-loaded for top 5
 }
 
 export interface PickPhase {
