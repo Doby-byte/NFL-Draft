@@ -73,8 +73,9 @@ export interface BetDecision {
 }
 
 export interface AIAnalysis {
-  sentiment_summary: string;
-  rationale: string;
+  pick_rationale: string;    // Mel Kiper para: team fit / why this pick
+  rationale: string;         // COMPASS/bet para: succinct score reasoning
+  sentiment_summary: string; // one-liner: breaking news / insider signals
   sentiment_score: number;
   final_recommendation: BetCall;
   confidence: Confidence;

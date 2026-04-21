@@ -86,11 +86,26 @@ export function AIRecommendationCard() {
 
       {/* Rationale */}
       {aiAnalysis ? (
-        <div className="border-t border-slate-700/50 pt-4 space-y-2">
-          <div className="text-xs text-slate-500 uppercase tracking-wider">AI Rationale</div>
-          <p className="text-slate-200 text-sm leading-relaxed">{aiAnalysis.rationale}</p>
+        <div className="border-t border-slate-700/50 pt-4 space-y-3">
+          {/* Para 1: Mel Kiper expert pick take */}
+          <div>
+            <div className="flex items-center gap-1.5 mb-1.5">
+              <span className="text-xs font-bold text-yellow-400 uppercase tracking-wider">🎙 Kiper's Take</span>
+            </div>
+            <p className="text-slate-100 text-sm leading-relaxed">{aiAnalysis.pick_rationale}</p>
+          </div>
+
+          {/* Para 2: COMPASS / bet reasoning */}
+          <div>
+            <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Score &amp; Bet</div>
+            <p className="text-slate-300 text-sm leading-relaxed">{aiAnalysis.rationale}</p>
+          </div>
+
+          {/* News/signals line */}
           {aiAnalysis.sentiment_summary && (
-            <p className="text-slate-400 text-xs">{aiAnalysis.sentiment_summary}</p>
+            <p className="text-slate-500 text-xs border-t border-slate-700/30 pt-2">
+              📡 {aiAnalysis.sentiment_summary}
+            </p>
           )}
         </div>
       ) : (
