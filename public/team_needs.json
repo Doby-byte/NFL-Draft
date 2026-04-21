@@ -111,23 +111,23 @@
   ],
   "LV": [
     {
-      "position": "EDGE",
+      "position": "QB",
       "rank": 1
     },
     {
-      "position": "DT",
+      "position": "EDGE",
       "rank": 2
     },
     {
-      "position": "CB",
+      "position": "DT",
       "rank": 3
     },
     {
-      "position": "OT",
+      "position": "CB",
       "rank": 4
     },
     {
-      "position": "WR",
+      "position": "OT",
       "rank": 5
     }
   ],

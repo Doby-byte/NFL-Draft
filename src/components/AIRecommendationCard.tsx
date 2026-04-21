@@ -90,7 +90,7 @@ export function AIRecommendationCard() {
           {/* Para 1: Mel Kiper expert pick take */}
           <div>
             <div className="flex items-center gap-1.5 mb-1.5">
-              <span className="text-xs font-bold text-yellow-400 uppercase tracking-wider">🎙 Kiper's Take</span>
+              <span className="text-xs font-bold text-yellow-400 uppercase tracking-wider">🎙 AI Says</span>
             </div>
             <p className="text-slate-100 text-sm leading-relaxed">{aiAnalysis.pick_rationale}</p>
           </div>

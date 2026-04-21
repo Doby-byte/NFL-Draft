@@ -77,12 +77,17 @@ export function usePhaseEngine() {
   }, [currentPickIndex]);
 
   function buildPayload(compassRes: ReturnType<typeof computeCompass>[], betDec: ReturnType<typeof computeBetDecision>, instruction: string) {
-    const top   = compassRes[0];
-    const needs = (teamNeeds[slot.team_abbr] ?? []).slice(0, 3).map(n => n.position);
+    const top      = compassRes[0];
+    const allNeeds = teamNeeds[slot.team_abbr] ?? [];
+    const ALL_POS  = ['QB','RB','WR','TE','OT','IOL','EDGE','DT','LB','CB','S'];
+    const needSet  = new Set(allNeeds.map(n => n.position));
     return {
       pick: slot.pick_number,
       team: slot.team_abbr,
-      team_needs: needs,
+      // Full ranked list — rank 1 = top need, rank 5 = minor
+      team_needs_ranked: allNeeds,
+      // Positions with ZERO organizational need — do not recommend these
+      team_no_need: ALL_POS.filter(p => !needSet.has(p)),
       top_player: {
         name: top.player.name, position: top.player.position,
         compass: top.compass_score, edge_vs_market: betDec.edge,
