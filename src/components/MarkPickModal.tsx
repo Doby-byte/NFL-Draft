@@ -72,6 +72,13 @@ export function MarkPickModal({ onClose }: Props) {
     };
 
     const { data } = await supabase.from('draft_picks').insert(record).select().single();
+
+    // Persist taken status to DB so server restarts resume correctly
+    await supabase
+      .from('players')
+      .update({ taken: true, taken_at_pick: slot.pick_number, taken_by_team: slot.team_abbr })
+      .eq('name', selected);
+
     markPlayerTaken(selected, slot.pick_number, slot.team_abbr);
     markPickMade(selected, data as DraftPick ?? record as DraftPick);
 

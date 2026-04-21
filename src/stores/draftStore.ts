@@ -39,6 +39,7 @@ interface DraftState {
   markPickMade: (playerName: string, actualPick: DraftPick) => void;
   addCompletedPick: (pick: DraftPick) => void;
   setCompletedPicks: (picks: DraftPick[]) => void;
+  setCurrentPickIndex: (index: number) => void;
   setShowHistory: (show: boolean) => void;
   setDraftModeActive: (active: boolean) => void;
   markPlayerTaken: (playerName: string, pickNumber: number, team: string) => void;
@@ -110,6 +111,7 @@ export const useDraftStore = create<DraftState>((set) => ({
   })),
 
   setCompletedPicks: (completedPicks) => set({ completedPicks }),
+  setCurrentPickIndex: (currentPickIndex) => set({ currentPickIndex }),
 
   setShowHistory: (showHistory) => set({ showHistory }),
   setDraftModeActive: (draftModeActive) => set({ draftModeActive }),
