@@ -26,7 +26,11 @@
       "WebFetch(domain:www.drafttek.com)",
       "WebFetch(domain:www.tankathon.com)",
       "WebFetch(domain:www.nfl.com)",
-      "WebFetch(domain:www.nfldraftbuzz.com)"
+      "WebFetch(domain:www.nfldraftbuzz.com)",
+      "Bash(npx supabase *)",
+      "Bash(xargs ls *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\({k:d[k] for k in list\\(d.keys\\(\\)\\)[:6]}, indent=2\\)\\)\")",
+      "Bash(supabase projects *)"
     ]
   }
 }

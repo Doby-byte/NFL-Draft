@@ -59,6 +59,26 @@ export interface CompassResult {
   ticker: string;
 }
 
+export interface UserProfile {
+  id: string;        // 'user_1' | 'user_2' | 'user_3' | 'user_4'
+  display_name: string;
+  created_at?: string;
+}
+
+export interface UserPick {
+  id?: number;
+  pick_number: number;
+  user_id: string;
+  player_chosen: string;
+  kalshi_odds_at_pick: number | null;
+  correct: boolean | null;
+  hypothetical_payout: number | null;
+  hypothetical_profit: number | null;
+  created_at?: string;
+}
+
+export type AppMode = 'kids' | 'grownup';
+
 export type BetCall = 'BET_YES' | 'BET_NO' | 'PASS';
 export type Confidence = 'HIGH' | 'MEDIUM' | 'LOW';
 export type Phase = 1 | 2 | 'closed';

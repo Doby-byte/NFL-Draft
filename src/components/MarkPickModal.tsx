@@ -74,6 +74,30 @@ export function MarkPickModal({ onClose }: Props) {
     const { data } = await supabase.from('draft_picks').insert(record).select().single();
     markPlayerTaken(selected, slot.pick_number, slot.team_abbr);
     markPickMade(selected, data as DraftPick ?? record as DraftPick);
+
+    // Resolve all user_picks for this pick_number — calculate hypothetical P&L
+    const { data: userPicks } = await supabase
+      .from('user_picks')
+      .select('id, user_id, player_chosen, kalshi_odds_at_pick')
+      .eq('pick_number', slot.pick_number);
+
+    if (userPicks && userPicks.length > 0) {
+      await Promise.all(
+        (userPicks as Array<{ id: number; user_id: string; player_chosen: string; kalshi_odds_at_pick: number | null }>)
+          .map(pick => {
+            const correct = pick.player_chosen === selected;
+            const odds    = pick.kalshi_odds_at_pick ?? 0;
+            // hypothetical $1 bet: payout = 1/odds if correct, profit = payout - 1 if correct else -1
+            const hypothetical_payout  = correct && odds > 0 ? 1 / odds : 0;
+            const hypothetical_profit  = correct && odds > 0 ? (1 / odds) - 1 : correct ? 0 : -1;
+            return supabase
+              .from('user_picks')
+              .update({ correct, hypothetical_payout, hypothetical_profit })
+              .eq('id', pick.id);
+          })
+      );
+    }
+
     setSaving(false);
     onClose();
   }
