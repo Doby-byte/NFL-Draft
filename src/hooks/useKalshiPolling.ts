@@ -51,7 +51,7 @@ export function useKalshiPolling() {
   const {
     currentPickIndex, players, teamNeeds, mockData,
     currentPhase, setCompassResults, setBetDecision,
-    incrementPoll, advancePickPhase,
+    incrementPoll, advancePickPhase, draftModeActive,
   } = useDraftStore();
 
   const slot = NFL_DRAFT_ORDER[currentPickIndex];
@@ -65,7 +65,7 @@ export function useKalshiPolling() {
   const oddsQuery = useQuery({
     queryKey: ['kalshi-odds', slot?.pick_number],
     queryFn:  () => fetchKalshiOdds(slot.pick_number),
-    refetchInterval: 60_000,
+    refetchInterval: draftModeActive ? 60_000 : false,
     enabled:  !!slot && players.length > 0,
     staleTime: 0, // always re-process on refetch
   });

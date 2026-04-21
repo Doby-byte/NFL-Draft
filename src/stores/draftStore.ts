@@ -25,6 +25,7 @@ interface DraftState {
 
   // UI
   showHistory: boolean;
+  draftModeActive: boolean;
 
   // Actions
   setPlayers: (players: Player[]) => void;
@@ -39,6 +40,7 @@ interface DraftState {
   addCompletedPick: (pick: DraftPick) => void;
   setCompletedPicks: (picks: DraftPick[]) => void;
   setShowHistory: (show: boolean) => void;
+  setDraftModeActive: (active: boolean) => void;
   markPlayerTaken: (playerName: string, pickNumber: number, team: string) => void;
   resetCurrentPick: () => void;
 }
@@ -54,6 +56,7 @@ export const useDraftStore = create<DraftState>((set) => ({
   aiAnalysis: null,
   completedPicks: [],
   showHistory: false,
+  draftModeActive: false,
 
   setPlayers: (players) => set({ players }),
   setTeamNeeds: (teamNeeds) => set({ teamNeeds }),
@@ -109,6 +112,7 @@ export const useDraftStore = create<DraftState>((set) => ({
   setCompletedPicks: (completedPicks) => set({ completedPicks }),
 
   setShowHistory: (showHistory) => set({ showHistory }),
+  setDraftModeActive: (draftModeActive) => set({ draftModeActive }),
 
   markPlayerTaken: (playerName, pickNumber, team) => set((state) => ({
     players: state.players.map(p =>

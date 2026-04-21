@@ -31,12 +31,14 @@ const TABS: { key: Tab; label: string }[] = [
 function DraftApp() {
   useStartupData();
   useKalshiPolling();
-  usePhaseEngine();
+  const { skipToPhase2 } = usePhaseEngine();
 
   const [tab, setTab]         = useState<Tab>('dashboard');
   const [showModal, setShowModal] = useState(false);
-  const { setShowHistory, currentPickIndex, completedPicks, players } = useDraftStore();
+  const { setShowHistory, currentPickIndex, completedPicks, players,
+          draftModeActive, setDraftModeActive } = useDraftStore();
   const qc = useQueryClient();
+  const [aiLoading, setAiLoading] = useState(false);
 
   const slot = NFL_DRAFT_ORDER[currentPickIndex];
   const isDraftComplete = currentPickIndex >= NFL_DRAFT_ORDER.length;
@@ -44,6 +46,12 @@ function DraftApp() {
   function forcePoll() {
     if (!slot) return;
     qc.invalidateQueries({ queryKey: ['kalshi-odds', slot.pick_number] });
+  }
+
+  async function handleSkipToPhase2() {
+    setAiLoading(true);
+    await skipToPhase2();
+    setAiLoading(false);
   }
 
   return (
@@ -79,20 +87,43 @@ function DraftApp() {
             <span className="text-xs text-slate-600 hidden sm:block">
               {completedPicks.length}/{NFL_DRAFT_ORDER.length}
             </span>
+
+            {/* Draft Mode toggle */}
+            <button
+              onClick={() => setDraftModeActive(!draftModeActive)}
+              className={`text-xs px-2.5 py-1.5 rounded-lg font-semibold transition-colors border ${
+                draftModeActive
+                  ? 'bg-green-600/20 border-green-500/50 text-green-400'
+                  : 'bg-slate-800 border-slate-700 text-slate-500 hover:text-slate-300'
+              }`}
+              title={draftModeActive ? 'Polling active — click to pause' : 'Polling paused — click to activate'}
+            >
+              {draftModeActive ? '🟢 LIVE' : '⏸ PAUSED'}
+            </button>
+
             <button
               onClick={() => setShowHistory(true)}
               className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1.5 rounded-lg transition-colors"
             >
               History
             </button>
+
             {!isDraftComplete && slot && tab === 'dashboard' && (
               <>
                 <button
                   onClick={forcePoll}
                   className="text-xs bg-slate-700 hover:bg-slate-600 text-yellow-400 px-2.5 py-1.5 rounded-lg transition-colors font-semibold"
-                  title="Force an immediate poll (dev/testing)"
+                  title="Force an immediate Kalshi fetch + COMPASS run"
                 >
-                  ⚡ Poll Now
+                  ⚡ Poll
+                </button>
+                <button
+                  onClick={handleSkipToPhase2}
+                  disabled={aiLoading}
+                  className="text-xs bg-purple-700 hover:bg-purple-600 disabled:opacity-50 text-white px-2.5 py-1.5 rounded-lg font-semibold transition-colors"
+                  title="Fire Claude now — skip waiting for poll #3"
+                >
+                  {aiLoading ? '⏳ AI...' : '🤖 AI Now'}
                 </button>
                 <button
                   onClick={() => setShowModal(true)}
