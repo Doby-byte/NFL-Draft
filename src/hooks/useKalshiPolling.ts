@@ -8,23 +8,46 @@ import type { KalshiOdds, KalshiHistory } from '@/types';
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL as string;
 
 async function fetchKalshiOdds(pickNumber: number): Promise<KalshiOdds[]> {
-  if (!SUPABASE_URL) return [];
-  const res = await fetch(
-    `${SUPABASE_URL}/functions/v1/kalshi-proxy?path=/markets%3Fseries_ticker%3DKXNFLDRAFT%26pick%3D${pickNumber}`,
-    { headers: { 'Content-Type': 'application/json' } }
-  );
-  if (!res.ok) throw new Error('Kalshi proxy error');
-  return res.json();
+  // Try real Kalshi via proxy
+  if (SUPABASE_URL) {
+    try {
+      const res = await fetch(
+        `${SUPABASE_URL}/functions/v1/kalshi-proxy?path=/markets%3Fseries_ticker%3DKXNFLDRAFT%26pick%3D${pickNumber}`,
+        { headers: { 'Content-Type': 'application/json' } }
+      );
+      if (res.ok) {
+        const data: KalshiOdds[] = await res.json();
+        if (data.length > 0) return data;
+      }
+    } catch { /* fall through to mock */ }
+  }
+
+  // Fall back to mock data
+  const res = await fetch('/mock_kalshi.json');
+  const mock = await res.json() as { picks: Record<string, KalshiOdds[]> };
+  const key = String(pickNumber);
+  // For picks beyond what's in mock data, use pick 10 data as a template
+  return mock.picks[key] ?? mock.picks['10'] ?? [];
 }
 
 async function fetchKalshiHistory(pickNumber: number): Promise<KalshiHistory[]> {
-  if (!SUPABASE_URL) return [];
-  const res = await fetch(
-    `${SUPABASE_URL}/functions/v1/kalshi-proxy?path=/markets%2Fhistory%26pick%3D${pickNumber}`,
-    { headers: { 'Content-Type': 'application/json' } }
-  );
-  if (!res.ok) return [];
-  return res.json();
+  if (SUPABASE_URL) {
+    try {
+      const res = await fetch(
+        `${SUPABASE_URL}/functions/v1/kalshi-proxy?path=/markets%2Fhistory%26pick%3D${pickNumber}`,
+        { headers: { 'Content-Type': 'application/json' } }
+      );
+      if (res.ok) {
+        const data: KalshiHistory[] = await res.json();
+        if (data.length > 0) return data;
+      }
+    } catch { /* fall through to mock */ }
+  }
+
+  const res = await fetch('/mock_kalshi.json');
+  const mock = await res.json() as { history: Record<string, KalshiHistory[]> };
+  const key = String(pickNumber);
+  return mock.history[key] ?? mock.history['3'] ?? [];
 }
 
 export function useKalshiPolling() {

@@ -1,0 +1,706 @@
+{
+  "TEN": [
+    {
+      "position": "QB",
+      "rank": 1
+    },
+    {
+      "position": "EDGE",
+      "rank": 2
+    },
+    {
+      "position": "CB",
+      "rank": 3
+    },
+    {
+      "position": "WR",
+      "rank": 4
+    },
+    {
+      "position": "OT",
+      "rank": 5
+    }
+  ],
+  "CLE": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "CB",
+      "rank": 2
+    },
+    {
+      "position": "S",
+      "rank": 3
+    },
+    {
+      "position": "DT",
+      "rank": 4
+    },
+    {
+      "position": "LB",
+      "rank": 5
+    }
+  ],
+  "NYG": [
+    {
+      "position": "QB",
+      "rank": 1
+    },
+    {
+      "position": "OT",
+      "rank": 2
+    },
+    {
+      "position": "EDGE",
+      "rank": 3
+    },
+    {
+      "position": "WR",
+      "rank": 4
+    },
+    {
+      "position": "CB",
+      "rank": 5
+    }
+  ],
+  "NE": [
+    {
+      "position": "QB",
+      "rank": 1
+    },
+    {
+      "position": "OT",
+      "rank": 2
+    },
+    {
+      "position": "WR",
+      "rank": 3
+    },
+    {
+      "position": "EDGE",
+      "rank": 4
+    },
+    {
+      "position": "CB",
+      "rank": 5
+    }
+  ],
+  "JAX": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "OT",
+      "rank": 2
+    },
+    {
+      "position": "CB",
+      "rank": 3
+    },
+    {
+      "position": "S",
+      "rank": 4
+    },
+    {
+      "position": "IOL",
+      "rank": 5
+    }
+  ],
+  "LV": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "OT",
+      "rank": 2
+    },
+    {
+      "position": "CB",
+      "rank": 3
+    },
+    {
+      "position": "DT",
+      "rank": 4
+    },
+    {
+      "position": "WR",
+      "rank": 5
+    }
+  ],
+  "NYJ": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "CB",
+      "rank": 2
+    },
+    {
+      "position": "OT",
+      "rank": 3
+    },
+    {
+      "position": "WR",
+      "rank": 4
+    },
+    {
+      "position": "S",
+      "rank": 5
+    }
+  ],
+  "CAR": [
+    {
+      "position": "QB",
+      "rank": 1
+    },
+    {
+      "position": "EDGE",
+      "rank": 2
+    },
+    {
+      "position": "OT",
+      "rank": 3
+    },
+    {
+      "position": "WR",
+      "rank": 4
+    },
+    {
+      "position": "CB",
+      "rank": 5
+    }
+  ],
+  "NO": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "DT",
+      "rank": 2
+    },
+    {
+      "position": "CB",
+      "rank": 3
+    },
+    {
+      "position": "OT",
+      "rank": 4
+    },
+    {
+      "position": "WR",
+      "rank": 5
+    }
+  ],
+  "CHI": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "IOL",
+      "rank": 2
+    },
+    {
+      "position": "CB",
+      "rank": 3
+    },
+    {
+      "position": "S",
+      "rank": 4
+    },
+    {
+      "position": "DT",
+      "rank": 5
+    }
+  ],
+  "SF": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "DT",
+      "rank": 2
+    },
+    {
+      "position": "CB",
+      "rank": 3
+    },
+    {
+      "position": "S",
+      "rank": 4
+    },
+    {
+      "position": "TE",
+      "rank": 5
+    }
+  ],
+  "DAL": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "CB",
+      "rank": 2
+    },
+    {
+      "position": "DT",
+      "rank": 3
+    },
+    {
+      "position": "OT",
+      "rank": 4
+    },
+    {
+      "position": "S",
+      "rank": 5
+    }
+  ],
+  "MIA": [
+    {
+      "position": "OT",
+      "rank": 1
+    },
+    {
+      "position": "EDGE",
+      "rank": 2
+    },
+    {
+      "position": "IOL",
+      "rank": 3
+    },
+    {
+      "position": "CB",
+      "rank": 4
+    },
+    {
+      "position": "S",
+      "rank": 5
+    }
+  ],
+  "IND": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "CB",
+      "rank": 2
+    },
+    {
+      "position": "WR",
+      "rank": 3
+    },
+    {
+      "position": "DT",
+      "rank": 4
+    },
+    {
+      "position": "S",
+      "rank": 5
+    }
+  ],
+  "ATL": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "DT",
+      "rank": 2
+    },
+    {
+      "position": "CB",
+      "rank": 3
+    },
+    {
+      "position": "S",
+      "rank": 4
+    },
+    {
+      "position": "OT",
+      "rank": 5
+    }
+  ],
+  "ARI": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "CB",
+      "rank": 2
+    },
+    {
+      "position": "OT",
+      "rank": 3
+    },
+    {
+      "position": "DT",
+      "rank": 4
+    },
+    {
+      "position": "WR",
+      "rank": 5
+    }
+  ],
+  "CIN": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "CB",
+      "rank": 2
+    },
+    {
+      "position": "OT",
+      "rank": 3
+    },
+    {
+      "position": "S",
+      "rank": 4
+    },
+    {
+      "position": "DT",
+      "rank": 5
+    }
+  ],
+  "SEA": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "OT",
+      "rank": 2
+    },
+    {
+      "position": "CB",
+      "rank": 3
+    },
+    {
+      "position": "DT",
+      "rank": 4
+    },
+    {
+      "position": "S",
+      "rank": 5
+    }
+  ],
+  "TB": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "OT",
+      "rank": 2
+    },
+    {
+      "position": "CB",
+      "rank": 3
+    },
+    {
+      "position": "DT",
+      "rank": 4
+    },
+    {
+      "position": "S",
+      "rank": 5
+    }
+  ],
+  "DEN": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "CB",
+      "rank": 2
+    },
+    {
+      "position": "S",
+      "rank": 3
+    },
+    {
+      "position": "OT",
+      "rank": 4
+    },
+    {
+      "position": "WR",
+      "rank": 5
+    }
+  ],
+  "PIT": [
+    {
+      "position": "OT",
+      "rank": 1
+    },
+    {
+      "position": "EDGE",
+      "rank": 2
+    },
+    {
+      "position": "WR",
+      "rank": 3
+    },
+    {
+      "position": "CB",
+      "rank": 4
+    },
+    {
+      "position": "S",
+      "rank": 5
+    }
+  ],
+  "LAC": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "OT",
+      "rank": 2
+    },
+    {
+      "position": "CB",
+      "rank": 3
+    },
+    {
+      "position": "S",
+      "rank": 4
+    },
+    {
+      "position": "DT",
+      "rank": 5
+    }
+  ],
+  "GB": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "CB",
+      "rank": 2
+    },
+    {
+      "position": "S",
+      "rank": 3
+    },
+    {
+      "position": "DT",
+      "rank": 4
+    },
+    {
+      "position": "WR",
+      "rank": 5
+    }
+  ],
+  "MIN": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "CB",
+      "rank": 2
+    },
+    {
+      "position": "S",
+      "rank": 3
+    },
+    {
+      "position": "DT",
+      "rank": 4
+    },
+    {
+      "position": "OT",
+      "rank": 5
+    }
+  ],
+  "HOU": [
+    {
+      "position": "CB",
+      "rank": 1
+    },
+    {
+      "position": "EDGE",
+      "rank": 2
+    },
+    {
+      "position": "DT",
+      "rank": 3
+    },
+    {
+      "position": "S",
+      "rank": 4
+    },
+    {
+      "position": "IOL",
+      "rank": 5
+    }
+  ],
+  "LAR": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "DT",
+      "rank": 2
+    },
+    {
+      "position": "CB",
+      "rank": 3
+    },
+    {
+      "position": "OT",
+      "rank": 4
+    },
+    {
+      "position": "S",
+      "rank": 5
+    }
+  ],
+  "BAL": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "DT",
+      "rank": 2
+    },
+    {
+      "position": "OT",
+      "rank": 3
+    },
+    {
+      "position": "S",
+      "rank": 4
+    },
+    {
+      "position": "WR",
+      "rank": 5
+    }
+  ],
+  "DET": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "DT",
+      "rank": 2
+    },
+    {
+      "position": "S",
+      "rank": 3
+    },
+    {
+      "position": "CB",
+      "rank": 4
+    },
+    {
+      "position": "IOL",
+      "rank": 5
+    }
+  ],
+  "WAS": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "CB",
+      "rank": 2
+    },
+    {
+      "position": "OT",
+      "rank": 3
+    },
+    {
+      "position": "DT",
+      "rank": 4
+    },
+    {
+      "position": "WR",
+      "rank": 5
+    }
+  ],
+  "BUF": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "CB",
+      "rank": 2
+    },
+    {
+      "position": "DT",
+      "rank": 3
+    },
+    {
+      "position": "S",
+      "rank": 4
+    },
+    {
+      "position": "IOL",
+      "rank": 5
+    }
+  ],
+  "KC": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "CB",
+      "rank": 2
+    },
+    {
+      "position": "OT",
+      "rank": 3
+    },
+    {
+      "position": "S",
+      "rank": 4
+    },
+    {
+      "position": "DT",
+      "rank": 5
+    }
+  ],
+  "PHI": [
+    {
+      "position": "EDGE",
+      "rank": 1
+    },
+    {
+      "position": "DT",
+      "rank": 2
+    },
+    {
+      "position": "CB",
+      "rank": 3
+    },
+    {
+      "position": "S",
+      "rank": 4
+    },
+    {
+      "position": "IOL",
+      "rank": 5
+    }
+  ]
+}

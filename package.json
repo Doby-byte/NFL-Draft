@@ -8,9 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "scrape": "npx ts-node --esm scripts/scrape_big_board.ts && npx ts-node --esm scripts/scrape_consensus.ts",
-    "seed": "npx ts-node --esm scripts/seed_players.ts",
-    "seed-needs": "npx ts-node --esm scripts/seed_team_needs.ts",
+    "scrape": "npx tsx scripts/scrape_big_board.ts && npx tsx scripts/scrape_consensus.ts",
+    "seed": "npx tsx scripts/seed_players.ts",
+    "seed-needs": "npx tsx scripts/seed_team_needs.ts",
     "predraft": "npm run scrape && npm run seed && npm run seed-needs"
   },
   "dependencies": {
@@ -19,7 +19,6 @@
     "@radix-ui/react-select": "^2.2.6",
     "@radix-ui/react-slot": "^1.2.4",
     "@supabase/supabase-js": "^2.104.0",
-    "@tailwindcss/vite": "^4.2.3",
     "@tanstack/react-query": "^5.99.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -27,7 +26,6 @@
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "tailwind-merge": "^3.5.0",
-    "tailwindcss": "^4.2.3",
     "zustand": "^5.0.12"
   },
   "devDependencies": {
@@ -36,15 +34,19 @@
     "@types/node": "^24.12.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
+    "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "^10.5.0",
     "dotenv": "^17.4.2",
     "eslint": "^9.39.4",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.5.0",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^3.4.19",
     "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.58.2",
-    "vite": "^8.0.9"
+    "vite": "^5.4.21"
   }
 }

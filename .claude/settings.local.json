@@ -9,7 +9,17 @@
       "Bash(npm create *)",
       "Bash(npm install)",
       "Bash(npm install *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(supabase --version)",
+      "Bash(npm uninstall *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(curl -s \"https://demo-api.kalshi.co/trade-api/v2/markets?limit=1\" -H \"Content-Type: application/json\")",
+      "Bash(curl -s \"https://demo-api.kalshi.co/trade-api/v2/markets?series_ticker=KXNFLDRAFT&limit=5\" -H \"Content-Type: application/json\")",
+      "Bash(curl -s \"https://demo-api.kalshi.co/trade-api/v2/series\" -H \"Content-Type: application/json\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(s.get\\('ticker',''\\),s.get\\('title',''\\)\\) for s in d.get\\('series',[]\\)[:20]]\")",
+      "Bash(python3 -m json.tool)",
+      "Bash(npx tsx *)"
     ]
   }
 }
